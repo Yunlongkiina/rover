@@ -3,8 +3,7 @@ import fetch from 'node-fetch';
 import { useState, useRef, useEffect  } from "react";
 
 import covidTablestyle from '../components/css/covidTable.module.css';
-// import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend,ResponsiveContainer,
-// } from 'recharts';
+
 import {
   BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend,ResponsiveContainer,
 } from 'recharts';
@@ -96,27 +95,11 @@ const CovidTable=({allCountryData})=>(
 );
 // END list top 10 withmost confirmed country 
 
-const DarwLineChart=()=>{
-  return(
-    <ResponsiveContainer>
-      <LineChart data={rawData}
-        margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
-      <CartesianGrid strokeDasharray="3 3" />
-      <XAxis  />
-      <YAxis />
-      <Tooltip />
-      <Legend />
-      <Line type="monotone" dataKey="NewConfirmed" stroke="#8884d8" />
-    </LineChart>
-    </ResponsiveContainer>
-  );
-};
-
 const DrawBarChart=({barChartData})=>{
   const data = barChartData;
   return (
     <ResponsiveContainer>
-      <BarChart width="100%" height="100%" data={data}>
+      <BarChart data={data}>
         <CartesianGrid strokeDasharray="3 3" />
         <XAxis dataKey="name" />
         <YAxis />
@@ -171,6 +154,7 @@ const processDataForBarChart=(countriesObjArr)=>{
 
 const Allcountry=(props)=> {
   const [openCountryList, setOpenCountryList] = useState(false);
+console.log(props);
 
   const summaryObjArr = props.props.summary;
   const countrysObjArr = summaryObjArr.Countries;

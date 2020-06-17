@@ -1,5 +1,5 @@
 import MainLayout from '../components/mainLayout';
-import Allcountry from './covid';
+import Allcountry from '../components/covid';
 
 const Home=({summary})=>{
   
