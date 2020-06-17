@@ -1,0 +1,45 @@
+.navWrapper{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    background: #226089;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.navRow{
+    position: relative;
+    padding: 20px 0;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.content{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo{
+    position: relative;
+    margin-left: 20px;
+    font-size: 30px;
+    color: white;
+}
+
+.clickMenu{
+    position: relative;
+}
+.menuIcon{
+    position: relative;
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    margin-right: 20px;    
+}

@@ -1,0 +1,226 @@
+
+.totalCvid{
+    position: relative;
+    width: 100vw;
+    padding-top: 65px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .totalCvid h1{
+    padding-top:20px;
+    font-size: 42px;
+  }
+  .globalBtnList{
+    position: relative;
+  }
+.globalBtn{
+    position: relative;
+    width: 200px;
+    margin: 20px 0;
+    padding: 10px 0;
+    font-size: 20px;
+    color: red;
+    border: none;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background: #fafaf6;
+}
+.globalBtn img{
+    width: 20px;
+    height: 20px;
+}
+.globalBtn:hover{
+    background: #071e3d;
+}
+.countryList{
+    position: absolute;
+    top: 56px;
+    z-index: 20;
+    width: 100%;
+    background: #071e3d;
+    color: white;
+    animation: showCountryList 1s linear;
+}
+@keyframes showCountryList {
+    from {opacity: 0;}
+    to {opacity: 1;}
+  }
+.countryList li{
+    padding: 5px 5px;
+    cursor: pointer;
+}
+.countryList li:hover{
+    background: #278ea5;
+}
+.summary{
+    position: relative;
+    width: 100%;
+}
+.summaryCards{
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-bottom: 40px;
+}
+.summaryCards p{
+    color: white;
+}
+.summaryCard{
+    text-align: center;
+    border-radius: 10px;
+    width: 150px;
+    margin: 10px;
+    padding: 10px;
+}
+.summaryCard:nth-child(1){
+    background: #c03546;
+}
+.summaryCard:nth-child(1):hover{
+  -webkit-box-shadow: 2px 7px 8px -2px rgba(192,53,70,0.75);
+  -moz-box-shadow: 2px 7px 8px -2px rgba(192,53,70,0.75);
+  box-shadow: 2px 7px 8px -2px rgba(192,53,70,0.75);
+  filter: brightness(110%);
+}
+.summaryCard:nth-child(2){
+    background: #83e85a;
+}
+.summaryCard:nth-child(2):hover{
+  -webkit-box-shadow: 2px 7px 8px -2px rgba(131,232,90,0.75);
+  -moz-box-shadow: 2px 7px 8px -2px rgba(131,232,90,0.75);
+  box-shadow: 2px 7px 8px -2px rgba(131,232,90,0.75);
+  filter: brightness(110%);
+}
+.summaryCard:nth-child(3){
+    background: gray;
+}
+.summaryCard:nth-child(3):hover{
+  -webkit-box-shadow: 2px 7px 8px -2px rgba(0,0,0,0.75);
+  -moz-box-shadow: 2px 7px 8px -2px rgba(0,0,0,0.75);
+  box-shadow: 2px 7px 8px -2px rgba(0,0,0,0.75);
+  filter: brightness(110%);
+}
+/* bar chart  */
+.barCharts{
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-rows: minmax(100px, auto);
+  margin: 40px;
+  grid-auto-flow: dense;
+  grid-gap: 20px;
+}
+.barChart{
+  height: 400px;
+}
+.barChart p{
+  text-align: center;
+}
+
+/* covidTable */
+.covidTable{
+    position: relative;
+    width: 100%;
+    max-width: 1440px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .capitalize{
+    text-transform: capitalize;
+    font-size: 20px;
+    padding: 10px 0;
+    line-height: 20px;
+    background: linear-gradient(to right, rgb(0, 159, 255), rgb(236, 47, 75));
+    color: white;
+  }
+
+  .covidTable table{
+    position: relative;
+    width: 100%;
+    border-collapse: collapse;
+    padding: 0 10px;
+  }
+  .summary p{
+    font-size: 20px;
+    text-align: center;
+  }
+  .chartCovid{
+    position: relative;
+    width: 100%;
+    height: 400px;
+  }
+
+  .covidTable tr:nth-of-type(odd) { 
+    background: #eee; 
+  }
+  .covidTable th { 
+    background: #333; 
+    color: white; 
+    font-weight: bold; 
+  }
+  .covidTable td, .covidTable th { 
+    padding: 6px; 
+    border: 1px solid #ccc; 
+    text-align: left; 
+  }
+  .tableHeadRow td{
+    padding: 10px 0;
+  }
+  .tableHeadRow th{
+    text-align: left;
+  }
+
+@media only screen and (max-width: 760px),
+(min-device-width: 768px) and (max-device-width: 1024px)  {
+
+	/* Force table to not be like tables anymore */
+    .covidTable table, .covidTable thead, .covidTable tbody, .covidTable th, .covidTable td, .covidTable tr, .covidTable caption{ 
+		display: block; 
+	}
+	
+	/* Hide table headers (but not display: none;, for accessibility) */
+	.covidTable thead tr { 
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+	}
+	
+	.covidTable tr { border: 1px solid #ccc; }
+	
+	.covidTable td { 
+		/* Behave  like a "row" */
+		border: none;
+		border-bottom: 1px solid #eee; 
+		position: relative;
+		padding-left: 50%; 
+	}
+	
+	.covidTable td:before { 
+		/* Now like a table header */
+		position: absolute;
+		/* Top/left values mimic padding */
+		top: 6px;
+		left: 6px;
+		width: 45%; 
+		padding-right: 10px; 
+		white-space: nowrap;
+	}
+	
+	/*
+	Label the data
+	*/
+	.covidTable td:nth-of-type(1):before { content: "Country"; }
+	.covidTable td:nth-of-type(2):before { content: "TotalConfirmed"; }
+	.covidTable td:nth-of-type(3):before { content: "TotalDeaths"; }
+	.covidTable td:nth-of-type(4):before { content: "TotalRecovered"; }
+  .covidTable td:nth-of-type(5):before { content: "NewConfirmed"; }
+  .covidTable td:nth-of-type(6):before { content: "NewDeaths"; }
+	.covidTable td:nth-of-type(7):before { content: "NewRecovered"; }
+}
